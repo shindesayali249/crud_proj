@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+    {% block title %}
+    <title>Show Student</title>
+    {% endblock%}
+
+{% block content %}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>STUDENT ROLL</th>
+                <th>STUDENT NAME</th>
+                <th>CITY</th>
+                <th>AGE</th>
+                <th>MARKS</th>
+                <th>ACTION</th>
+                <th>IMAGE</th>
+            </tr>
+
+        </thead>
+        <tbody>
+          {% for record in data %}
+            <tr>
+                <td>{{record.roll}}</td>
+                <td>{{record.name}}</td>
+                <td>{{record.city}}</td>
+                <td>{{record.age}}</td>
+                <td>{{record.marks}}</td>
+                <td><img src="{{ record.image.url }}"></td>
+                <td>
+                    <a href="{% url 'update_stu_url' record.id %}"><button class="btn btn-outline-warning btn-sm me-2">UPDATE</button></a>
+                    <a href="{% url 'delete_stu_url' record.id %}"><button class="btn btn-outline-danger btn-sm">DELETE</button></a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock%}

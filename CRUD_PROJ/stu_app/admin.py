@@ -1,0 +1,11 @@
+from django.contrib import admin
+from .models import Student, Subject
+
+# Register your models here.
+
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['roll','name','city','age','marks']
+
+admin.site.register(Subject)
+

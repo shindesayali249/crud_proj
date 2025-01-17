@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+    {% block title %}
+    <title>Delete Subject</title>
+    {% endblock %}
+
+    {% block content %}
+<form method="post">
+    {% csrf_token %}
+
+  <div class="container">
+
+    <h1><u><center>DELETE CONFIRMATION</center></u></h1> <br/><br/>
+
+        <h2>Do You Really Want To Delete <span style="color:red"> {{data.student}} </span> Record??</h2>
+      <br/>
+
+        <button type="submit" class="btn btn-outline-danger btn-sm col-4">YES</button>
+       <a href="{% url 'show_sub_url' %}"> <button type="button" class="btn btn-outline-warning btn-sm col-4">NO</button></a>
+  </div>
+
+</form>
+    {% endblock %}

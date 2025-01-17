@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+    {% block title %}
+    <title>Update Subject</title>
+    {% endblock%}
+
+{% block content %}
+  <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <input type="submit" value="UPDATE SUBJECT" class="btn btn-outline-success btn-sm col-6">
+        <input type="reset" value="RESET" class="btn btn-outline-warning btn-sm col-6 float-end">
+    </form>
+  </div>
+{% endblock %}
