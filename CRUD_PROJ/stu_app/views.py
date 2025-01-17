@@ -4,8 +4,6 @@ from .models import Student, Subject
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
-
 @login_required(login_url='login_url')
 def add_stu_view(request):
     form = StudentForm()
